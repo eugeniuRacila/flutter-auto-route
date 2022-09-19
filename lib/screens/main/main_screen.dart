@@ -16,6 +16,9 @@ class MainScreen extends StatelessWidget implements AutoRouteWrapper {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text("isLoading? ${state.isLoading}"),
+                const SizedBox(
+                  height: 16.0,
+                ),
                 ElevatedButton(
                   onPressed: () {
                     BlocProvider.of<MainCubit>(context)

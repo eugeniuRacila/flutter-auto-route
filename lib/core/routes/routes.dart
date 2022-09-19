@@ -3,6 +3,7 @@ import 'package:auto_route/empty_router_widgets.dart';
 import 'package:bristoli/screens/home/home_screen.dart';
 import 'package:bristoli/screens/main/main_screen.dart';
 import 'package:bristoli/screens/my_tasks/my_tasks_screen.dart';
+import 'package:bristoli/screens/my_tasks/task_details/task_details_screen.dart';
 import 'package:bristoli/screens/profile/profile_screen.dart';
 
 @MaterialAutoRouter(
@@ -24,6 +25,7 @@ import 'package:bristoli/screens/profile/profile_screen.dart';
         path: 'my-tasks',
         children: [
           AutoRoute(page: MyTasksScreen, path: ''),
+          AutoRoute(page: TaskDetailsScreen, path: ':taskId'),
           RedirectRoute(path: '*', redirectTo: ''),
         ],
       ),
