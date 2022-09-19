@@ -25,7 +25,11 @@ import 'package:bristoli/screens/profile/profile_screen.dart';
         path: 'my-tasks',
         children: [
           AutoRoute(page: MyTasksScreen, path: ''),
-          AutoRoute(page: TaskDetailsScreen, path: ':taskId'),
+          AutoRoute(
+            meta: {'hideBottomNavigation': true},
+            page: TaskDetailsScreen,
+            path: ':taskId',
+          ),
           RedirectRoute(path: '*', redirectTo: ''),
         ],
       ),

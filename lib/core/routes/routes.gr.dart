@@ -123,6 +123,7 @@ class AppRouter extends _i7.RootStackRouter {
                   TaskDetailsRoute.name,
                   path: ':taskId',
                   parent: MyTasksRouter.name,
+                  meta: <String, dynamic>{'hideBottomNavigation': true},
                 ),
                 _i7.RouteConfig(
                   '*#redirect',
