@@ -15,16 +15,15 @@ class MainScreen extends StatelessWidget implements AutoRouteWrapper {
             builder: (context, state) => Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text("isLoading? ${state.isLoading}"),
+                Text("Counter: ${state.counter}"),
                 const SizedBox(
                   height: 16.0,
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    BlocProvider.of<MainCubit>(context)
-                        .setLoading(!state.isLoading);
+                    BlocProvider.of<MainCubit>(context).incrementCounter();
                   },
-                  child: const Text("Change isLoading state"),
+                  child: const Text("Increment counter"),
                 ),
               ],
             ),

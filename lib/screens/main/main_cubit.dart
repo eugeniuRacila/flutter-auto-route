@@ -5,18 +5,24 @@ class MainCubit extends Cubit<MainScreenState> {
     MainScreenState? initialState,
   }) : super(initialState ?? MainScreenState.initialState());
 
-  void setLoading(bool loading) => emit(state.copyWith(isLoading: loading));
+  void incrementCounter() => emit(
+        state.copyWith(counter: state.counter + 1),
+      );
 }
 
 class MainScreenState {
-  bool isLoading;
+  int counter;
 
   MainScreenState({
-    required this.isLoading,
+    required this.counter,
   });
 
-  static MainScreenState initialState() => MainScreenState(isLoading: false);
+  static MainScreenState initialState() => MainScreenState(counter: 0);
 
-  MainScreenState copyWith({isLoading = false}) =>
-      MainScreenState(isLoading: isLoading);
+  MainScreenState copyWith({
+    int? counter,
+  }) =>
+      MainScreenState(
+        counter: counter ?? this.counter,
+      );
 }
