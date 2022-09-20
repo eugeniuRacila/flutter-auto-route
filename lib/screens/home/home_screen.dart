@@ -7,9 +7,18 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AutoTabsScaffold(
-      bottomNavigationBuilder: buildBottomNav,
+    return AutoTabsRouter.pageView(
+      // bottomNavigationBuilder: buildBottomNav,
       routes: const [MainRouter(), MyTasksRouter(), ProfileRouter()],
+      builder: ((context, child, pageController) {
+        return Scaffold(
+          body: child,
+          bottomNavigationBar: buildBottomNav(
+            context,
+            context.tabsRouter,
+          ),
+        );
+      }),
     );
   }
 
